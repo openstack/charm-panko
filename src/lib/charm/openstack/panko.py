@@ -31,7 +31,7 @@ PANKO_WSGI_CONF = '/etc/apache2/sites-available/{}.conf'.format(
     PANKO_APACHE_SITE)
 
 
-class PankoCharmRelationAdapaters(adapters.OpenStackAPIRelationAdapters):
+class PankoCharmRelationAdapters(adapters.OpenStackAPIRelationAdapters):
     relation_adapters = {
         'shared_db': adapters.DatabaseRelationAdapter,
         'cluster': adapters.PeerHARelationAdapter,
@@ -88,7 +88,7 @@ class PankoCharm(charms_openstack.charm.HAOpenStackCharm):
     sync_cmd = ['panko-dbsync',
                 '--log-file=/var/log/panko/panko-upgrade.log']
 
-    adapters_class = PankoCharmRelationAdapaters
+    adapters_class = PankoCharmRelationAdapters
 
     def install(self):
         super(PankoCharm, self).install()
