@@ -31,6 +31,9 @@ PANKO_WSGI_CONF = '/etc/apache2/sites-available/{}.conf'.format(
     PANKO_APACHE_SITE)
 
 
+charms_openstack.charm.use_defaults('charm.default-select-release')
+
+
 class PankoCharmRelationAdapters(adapters.OpenStackAPIRelationAdapters):
     relation_adapters = {
         'shared_db': adapters.DatabaseRelationAdapter,
@@ -81,7 +84,12 @@ class PankoCharm(charms_openstack.charm.HAOpenStackCharm):
 
     package_codenames = {
         'panko-common': collections.OrderedDict([
-            ('4', 'pike'),
+            ('2', 'mitaka'),
+            ('3', 'newton'),
+            ('4', 'ocata'),
+            ('5', 'pike'),
+            ('6', 'queens'),
+            ('7', 'rocky'),
         ]),
     }
 
