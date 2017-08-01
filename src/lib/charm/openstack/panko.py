@@ -55,7 +55,7 @@ class PankoCharm(charms_openstack.charm.HAOpenStackCharm):
 
     # List of packages to install for this charm
     packages = ['panko-api', 'python-apt', 'python-keystonemiddleware',
-                'apache2', 'libapache2-mod-wsgi']
+                'apache2', 'python-pymysql', 'libapache2-mod-wsgi']
 
     api_ports = {
         'panko-api': {
