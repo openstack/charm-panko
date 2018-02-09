@@ -40,7 +40,7 @@ class PankoCharmDeployment(amulet_deployment.OpenStackAmuletDeployment):
         self._deploy()
 
         u.log.info('Waiting on extended status checks...')
-        exclude_services = ['mysql', 'mongodb']
+        exclude_services = ['percona-cluster', 'mongodb']
         self._auto_wait_for_status(exclude_services=exclude_services)
 
         self._initialize_tests()
@@ -54,7 +54,7 @@ class PankoCharmDeployment(amulet_deployment.OpenStackAmuletDeployment):
            """
         this_service = {'name': 'panko'}
         other_services = [
-            {'name': 'mysql'},
+            {'name': 'percona-cluster'},
             {'name': 'mongodb'},
             {'name': 'ceilometer'},
             {'name': 'keystone'},
@@ -66,11 +66,11 @@ class PankoCharmDeployment(amulet_deployment.OpenStackAmuletDeployment):
     def _add_relations(self):
         """Add all of the relations for the services."""
         relations = {
-            'keystone:shared-db': 'mysql:shared-db',
+            'keystone:shared-db': 'percona-cluster:shared-db',
             'panko:identity-service': 'keystone:identity-service',
-            'panko:shared-db': 'mysql:shared-db',
+            'panko:shared-db': 'percona-cluster:shared-db',
             'ceilometer:identity-service': 'keystone:identity-service',
-            'ceilometer:shared-db': 'monogdb:database',
+            'ceilometer:shared-db': 'mongodb:database',
             'ceilometer:amqp': 'rabbitmq-server:amqp',
         }
         super(PankoCharmDeployment, self)._add_relations(relations)
@@ -89,7 +89,7 @@ class PankoCharmDeployment(amulet_deployment.OpenStackAmuletDeployment):
         """Perform final initialization before tests get run."""
         # Access the sentries for inspecting service units
         self.panko_sentry = self.d.sentry['panko'][0]
-        self.mysql_sentry = self.d.sentry['mysql'][0]
+        self.pxc_sentry = self.d.sentry['percona-cluster'][0]
         self.keystone_sentry = self.d.sentry['keystone'][0]
         self.panko_svcs = ['haproxy', 'apache2']
 
