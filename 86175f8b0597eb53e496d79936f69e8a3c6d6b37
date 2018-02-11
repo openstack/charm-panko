@@ -1,0 +1,9 @@
+Verified+1: Canonical CI <uosci-testing-bot@ubuntu.com>
+Code-Review+2: James Page <james.page@canonical.com>
+Workflow+1: James Page <james.page@canonical.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Sun, 11 Feb 2018 08:13:41 +0000
+Reviewed-on: https://review.openstack.org/542832
+Project: openstack/charm-panko
+Branch: refs/heads/master
