@@ -1,0 +1,10 @@
+Verified-1: Canonical CI <uosci-testing-bot@ubuntu.com>
+Code-Review+2: Ryan Beisner <ryan.beisner@canonical.com>
+Code-Review+2: Frode Nordahl <frode.nordahl@canonical.com>
+Workflow+1: Frode Nordahl <frode.nordahl@canonical.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Fri, 02 Nov 2018 16:05:54 +0000
+Reviewed-on: https://review.openstack.org/606507
+Project: openstack/charm-panko
+Branch: refs/heads/master
