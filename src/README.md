@@ -1,4 +1,6 @@
 # Overview
+**WARNING**:  This charm is in a preview/experimental state, not yet intended
+for production use.
 
 This charm provides the Panko event storage and API service for an OpenStack Cloud.
 
