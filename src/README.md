@@ -1,6 +1,8 @@
 # Overview
-**WARNING**:  This charm is in a preview/experimental state, not yet intended
-for production use.
+
+> **WARNING**: DO NOT USE OR CONTRIBUTE. This charm is not maintained anymore
+> because the [upstream project](https://opendev.org/openstack/panko) isn't
+> either.
 
 This charm provides the Panko event storage and API service for an OpenStack Cloud.
 
