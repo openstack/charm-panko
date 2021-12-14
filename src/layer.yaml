@@ -1,5 +1,0 @@
-includes: ['layer:openstack-api', 'interface:panko']
-repo: 'https://github.com/openstack/charm-panko'
-options:
-  basic:
-    use_venv: True
